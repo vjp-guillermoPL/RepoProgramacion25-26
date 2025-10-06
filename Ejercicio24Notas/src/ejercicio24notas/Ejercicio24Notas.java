@@ -23,7 +23,7 @@ public class Ejercicio24Notas {
         Scanner entrada5= new Scanner(System.in);
         Scanner entrada6 = new Scanner(System.in);
         
-        int nota1, nota2, nota3, nota4, nota5, nota6;
+        float nota1, nota2, nota3, nota4, nota5, nota6;
         float media;
         
         System.out.println("Introduce la nota de Programación");
