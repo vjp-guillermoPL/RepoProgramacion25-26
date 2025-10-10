@@ -30,11 +30,30 @@ public class Ejercicio08Billetes {
         monedas2 = (dinero % 5) / 2;
         monedas1 = (dinero % 2);
         
-        if (billetes50 >0 && billetes20 >0 && billetes10 >0 && billetes5 >0 && monedas2 >0 && monedas1 >0) {
-            System.out.println(dinero +" se descompone en "+ billetes50 +" billetes de 50, "+ billetes20 +" billetes de 20, "+ billetes10 +" billetes de 10, "+ billetes5 +" billetes de 5, "+ monedas2 +" monedas de 2 euros y "+ monedas1 +" monedas de 1 euro");
-        }else if (billetes50 >0 && billetes20 >0 && billetes10 >0 && billetes5 >0 && monedas2 >0 && monedas1 <0){
-            System.out.println(dinero +" se descompone en "+ billetes50 +" billetes de 50, "+ billetes20 +" billetes de 20, "+ billetes10 +" billetes de 10, "+ billetes5 +" billetes de 5, "+ monedas2 +" monedas de 2 euros");
+        System.out.println("Su dinero se descompone en: ");
+        if (billetes50 > 0) {
+            System.out.println(billetes50+" billetes de 50");
         }
+        
+        if (billetes20 > 0) {
+            System.out.println(billetes20+" billetes de 20");
+        }
+        
+        if (billetes10 > 0) {
+            System.out.println(billetes10+" billetes de 10");
+        }
+        
+        if (billetes5 > 0) {
+            System.out.println(billetes5+" billetes de 5");
+        }
+        
+        if (monedas2 > 0) {
+            System.out.println(monedas2+" monedas de 2");
+        }
+        
+        if (monedas1 > 0) {
+            System.out.println(monedas1+" monedas de 1");
+        }
+
     }
-    
 }
