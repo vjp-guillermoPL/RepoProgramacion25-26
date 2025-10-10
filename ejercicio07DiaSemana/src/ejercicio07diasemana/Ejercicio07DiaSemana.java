@@ -16,14 +16,14 @@ public class Ejercicio07DiaSemana {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int diasemana;
+        int diasemana;                          //Declaro las variables
         boolean laborable = true;
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);       //Creo el Scanner
         
-        System.out.println("Escribe en número el dia de la semana");
+        System.out.println("Escribe en número el dia de la semana");        //Pido por pantalla al usuario el número del dia
         diasemana = entrada.nextInt();
         
-        switch (diasemana) {
+        switch (diasemana) {            //En caso de que sea del uno al 5 (De lunes a viernes) se trabaja, en caso contrario, no se trabaja 
             case 1:
             case 2:
             case 3:

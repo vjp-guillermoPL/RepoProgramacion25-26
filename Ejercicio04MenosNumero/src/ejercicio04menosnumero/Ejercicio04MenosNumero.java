@@ -16,10 +16,10 @@ public class Ejercicio04MenosNumero {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int num1, num2, num3;
-        Scanner entrada = new Scanner(System.in);
+        int num1, num2, num3;                           //Declaro las variables
+        Scanner entrada = new Scanner(System.in);       //Creo el Scanner
         
-        System.out.println("Introduzca un número");
+        System.out.println("Introduzca un número");     //Pido por pantalla al usuario los tres números
         num1 = entrada.nextInt();
         
         System.out.println("Introduzca un número");
@@ -29,11 +29,11 @@ public class Ejercicio04MenosNumero {
         num3 = entrada.nextInt();
         
         if (num1 <= num2 && num1 <= num3) {
-            System.out.println("El número menor es: "+ num1);
+            System.out.println("El número menor es: "+ num1);       //Si el número menor es el primero, lo impromo por pantalla
         } else if(num2 <= num1 && num2 <= num3){
-            System.out.println("El número menor es: "+ num2);
+            System.out.println("El número menor es: "+ num2);       //Si el número menor es el segundo, lo impromo por pantalla
         } else {
-            System.out.println("El número menor es: "+ num3);
+            System.out.println("El número menor es: "+ num3);       //Si el número menor es el segundo, lo impromo por pantalla
         }
     }
     

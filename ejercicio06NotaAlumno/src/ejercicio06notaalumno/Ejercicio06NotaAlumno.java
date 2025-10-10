@@ -15,13 +15,13 @@ public class Ejercicio06NotaAlumno {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       int nota; 
-       Scanner entrada = new Scanner(System.in);
+       int nota;                                            //Declaro la variable
+       Scanner entrada = new Scanner(System.in);            //Creo el Scanner
        
-        System.out.println("Escribe la nota de un alumno");
+        System.out.println("Escribe la nota de un alumno");     //Pido por pantalla al usuario la nota
         nota = entrada.nextInt();
         
-        switch(nota){
+        switch(nota){                                       //En caso de que la nota esté entre 0 y 4 es suspenso
             case 0:
             case 1:
             case 2:
@@ -31,18 +31,18 @@ public class Ejercicio06NotaAlumno {
                 break;
             case 5:
             case 6:
-                System.out.println("Su nota es bien");
+                System.out.println("Su nota es bien");              //En caso de que la nota esté entre 5 y 6 es bien
                 break;
             case 7:
             case 8:
-                System.out.println("Su nota es notable");
+                System.out.println("Su nota es notable");           //En caso de que la nota esté entre 7 y 8 es notable
                 break;
             case 9:
             case 10:
-                System.out.println("Su nota es sobresaliente");
+                System.out.println("Su nota es sobresaliente");     //En caso de que la nota esté entre 9 y 10 es sobresaliente
                 break;
             default:
-                System.out.println("Su nota no está entre 0 y 10");
+                System.out.println("Su nota no está entre 0 y 10");         // si el número dado no está entre 0 y 10, es incorrecto
         }
     }
     

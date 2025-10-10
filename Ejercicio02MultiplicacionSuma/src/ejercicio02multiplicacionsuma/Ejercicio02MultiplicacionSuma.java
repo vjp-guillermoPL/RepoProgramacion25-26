@@ -17,17 +17,17 @@ public class Ejercicio02MultiplicacionSuma {
      */
     public static void main(String[] args) {
         int num1;
-        int num2;
+        int num2;                                           //Declaro las variables
         int resultado;
-        Scanner entrada = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);           //Creo el Scanner
         
-        System.out.println("Introduce un número");
+        System.out.println("Introduce un número");          //Pido por pantalla los números
         num1 = entrada.nextInt();
         
         System.out.println("Introduce otro número");
         num2 = entrada.nextInt();
         
-        if (num1 > 10) {
+        if (num1 > 10) {                                    //Si el primer número es mayor que 10, lo multiplico por el segundo, sino los sumo
             resultado = num1*num2;
             System.out.println("La operación que se realizó es la multiplicación y el resultado es: "+ resultado);
         } else {

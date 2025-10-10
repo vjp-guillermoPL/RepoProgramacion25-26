@@ -15,11 +15,11 @@ public class Ejercicio09Creciente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int num1, num2, num3, num4;
+        int num1, num2, num3, num4;                     //Declaro las variables
         int auxiliar;
-        Scanner entrada = new Scanner (System.in);
+        Scanner entrada = new Scanner (System.in);      //Creo el Scanner
         
-        System.out.println("Introduce un número");
+        System.out.println("Introduce un número");      //Pido por pantalla los números
         num1 = entrada.nextInt();
         
         System.out.println("Introduce un número");
@@ -31,7 +31,7 @@ public class Ejercicio09Creciente {
         System.out.println("Introduce un número");
         num4 = entrada.nextInt();
         
-        if (num1 > num2) {
+        if (num1 > num2) {                              //Si el número mayor es el primero, lo paso al final y así con cada número
             auxiliar = num1;
             num1 = num2;
             num2 = auxiliar;
@@ -48,7 +48,7 @@ public class Ejercicio09Creciente {
         }
         
         
-        if (num1 > num2) {
+        if (num1 > num2) {                              //Se repite lo anterior
             auxiliar = num1;
             num1 = num2;
             num2 = auxiliar;

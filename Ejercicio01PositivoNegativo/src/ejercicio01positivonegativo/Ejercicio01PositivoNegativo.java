@@ -14,13 +14,13 @@ public class Ejercicio01PositivoNegativo {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int num;
-        Scanner entrada = new Scanner(System.in);
+        int num;                                            //Declaro la variable
+        Scanner entrada = new Scanner(System.in);           //Creo el Scanner
         
-        System.out.println("Introduce un número");
+        System.out.println("Introduce un número");          //Pido por pantalla el número
         num = entrada.nextInt();
         
-        if (num >= 0) {
+        if (num >= 0) {                                     //Si el número es mayor o igual que 0, es positivo, sino, es negativo
             System.out.println("Su número es positivo");
         } else {
             System.out.println("Su número es negativo");
