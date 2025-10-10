@@ -18,17 +18,19 @@ public class Ejercicio32DividirBilletes {
     public static void main(String[] args) {
         Scanner entrada = new Scanner(System.in);
         int dinero;
-        int billetes50, billetes20, billetes10, billetes5, monedas2, monedas1;
+        int billetes50, billetes20, billetes10, billetes5, monedas2, monedas1;      //Declaro las variables
         
-        System.out.println("Introduce una cantidad de dinero");
+        System.out.println("Introduce una cantidad de dinero");                     //Pido por pantalla al usuario el número de dinero que hay
         dinero = entrada .nextInt();
         
-        billetes50 = dinero/50;
+        billetes50 = dinero/50;                             //Voy desglosando el dinero total entre los distintos billetes
         billetes20 = (dinero % 50) /20;
         billetes10 = (dinero % 20) / 10;
         billetes5 = (dinero % 10) / 5;
         monedas2 = (dinero % 5) / 2;
         monedas1 = (dinero % 2);
+        
+        //Digo por pantalla cuantos billetes hay de cada
         
         System.out.println(dinero +" se descompone en "+ billetes50 +" billetes de 50, "+ billetes20 +" billetes de 20, "+ billetes10 +" billetes de 10, "+ billetes5 +" billetes de 5, "+ monedas2 +" monedas de 2 euros y "+ monedas1 +" monedas de 2 euro");
     }

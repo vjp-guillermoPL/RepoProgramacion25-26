@@ -14,14 +14,14 @@ public class Ejercicio26Numero4cifras {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in);
-        int num4c;
+        Scanner entrada = new Scanner(System.in);       //Creo el Scanner
+        int num4c;                                      //Declaro las variables
         int cifra1,cifra2,cifra3,cifra4;
         
-        System.out.println("Introduce un numero de cuatro cifras");
+        System.out.println("Introduce un numero de cuatro cifras");     //Pido al usuario un número de cuatro cifras
         num4c = entrada .nextInt();
         
-        cifra1 = num4c/1000;
+        cifra1 = num4c/1000;                            //Divido el número en cada una de sus cifras y las imprimo por pantalla
         cifra2 = (num4c/100) % 10;
         cifra3 = (num4c/10) % 10;
         cifra4 = num4c % 10;
