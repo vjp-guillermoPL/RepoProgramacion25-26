@@ -15,18 +15,18 @@ public class Ejercicio14ParesHasta100 {
      */
     public static void main(String[] args) {
         int i = 0;
-        int j = i;
+        int contador = i;
         
         System.out.println("Los 100 primero números pares son: ");
         do {
             if (i % 2 == 0) {
                 System.out.println(i);
-                j++;
+                contador++;
             }
             i++;
             
-            } while (j < 100);
-        System.out.println("Sacó un total de "+ j +" números");
+            } while (contador < 100);
+        System.out.println("Sacó un total de "+ contador +" números");
 
     }
     
