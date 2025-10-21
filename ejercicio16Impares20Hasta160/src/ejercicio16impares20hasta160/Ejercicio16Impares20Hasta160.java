@@ -15,18 +15,18 @@ public class Ejercicio16Impares20Hasta160 {
      */
     public static void main(String[] args) {
         int i = 0;              //Declaro las variables
-        int j = i;
+        int contador = i;
         
         System.out.println("Los números impares entre 20 y 160 son: ");         
         do {
             if (i > 20 && i % 2 != 0) {                                         //Creo un bucle que, mientras el número esté entre 20 y 160, imprima por pantalla todos los números impares
                 System.out.println(i);
-                j++;                                                            //Si el número está por encima de 20 y es impar, suma uno
+                contador++;                                                            //Si el número está por encima de 20 y es impar, suma uno
             }
             i++;                                                                //Suma uno por cada buelta que dé
             
             } while (i < 160);
-        System.out.println("Sacó un total de "+ j +" números");
+        System.out.println("Sacó un total de "+ contador +" números");
     }
     
 }
