@@ -24,7 +24,8 @@ public class Utilidades {
         } catch (InputMismatchException e) {
             System.out.println("Introduciste un dato erroneo");
         }
-        } while (num != -1);
         return num;
+        } while (num != -1);
+        
     }
 }
