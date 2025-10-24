@@ -32,8 +32,9 @@ public class MetodosEstaticos {
     //Método que devuelve true si la contraseña que pasamos por parámetro es correcta -> tipo boolean
     
     public static void main(String[] args) {
-        int num1 = 6;
-        int num2 = 3;
+        int num1;
+        int num2;
+        double resultado;
 
         //Llamamos a los métodos para que se ejecuten al lanzar el programa.
         //saludo();
@@ -44,10 +45,37 @@ public class MetodosEstaticos {
         
         
         //Llamamos a métodos estáticos de otra clase
-        System.out.println(Calculadora.suma(num1, num2));
-        System.out.println(Calculadora.resta(num1, num2));
+        //System.out.println(Calculadora.suma(num1, num2));
+        //System.out.println(Calculadora.resta(num1, num2));
 
         //Llamamos a un método estático de una clase de otro paquete (Debemos importar el paquete)
-        Utilidades.pedirNumero();
+        //Utilidades.pedirNumero();
+        
+        //Creamos una calculadora
+        //1. Pedimos dos números
+        num1 = Utilidades.pedirNumero();
+        num2 = Utilidades.pedirNumero();
+        
+        System.out.println(num1 +" - "+ num2);
+        
+        //2. Llamamos a los métodos, guardamos el resultado en una variable  y mostramos dicha variable
+        try {
+        resultado = Calculadora.suma(num1, num2);
+        System.out.println(num1 +" + "+ num2 +" = "+ resultado);
+        
+        resultado = Calculadora.resta(num1, num2);
+        System.out.println(num1 +" - "+ num2 +" = "+ resultado);
+        
+        resultado = Calculadora.multiplicacion(num1, num2);
+        System.out.println(num1 +" * "+ num2 +" = "+ resultado);
+        
+        resultado = Calculadora.division(num1, num2);
+        System.out.println(num1 +" / "+ num2 +" = "+ resultado);
+        
+        resultado = Calculadora.raizCuadrada(num1);
+        System.out.println("Raiz cuadrada de "+ num1 +" = "+ resultado);
+        } catch (ArithmeticException e) {
+            System.out.println("Ha sucedido una excepción aritmetica");
+        } 
     }
 }
