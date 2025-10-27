@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package ejercicio03metodomayornum;
+package ejercicio04metodomenornum;
 
 import java.util.Scanner;
 
@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author alumno
  */
-public class Ejercicio03MetodoMayorNum {
+public class Ejercicio04MetodoMenorNum {
 
     /**
      * @param args the command line arguments
@@ -28,7 +28,7 @@ public class Ejercicio03MetodoMayorNum {
         System.out.println("Escribe otro número: ");
         num3 = entrada.nextInt();
         
-        MayorNum.MayorNum.mayorNum(num1, num2, num3);
+        MenorNum.MenorNum.menorNum(num1, num2, num3);
     }
     
 }
