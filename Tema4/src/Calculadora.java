@@ -68,4 +68,28 @@ public class Calculadora {
         return Math.sqrt(num1);
     }
     
+    public static double cuadrado(double num1) {
+        return Math.pow(num1, 2);
+    }
+    
+    public static double cubo(double num1) {
+        return Math.pow(num1, 3);
+    }
+    
+    public static double logaritmo(double num1){
+        return Math.log(num1);
+    }
+    
+    public static int numMax(int num1, int num2){
+        return Math.max(num1, num2);
+    }
+    
+    public static int numMin(int num1, int num2){
+        return Math.min(num1, num2);
+    }
+    
+    public static double redondeoAlza(double num1){
+        return Math.ceil(num1);
+    }
+    
 }   
