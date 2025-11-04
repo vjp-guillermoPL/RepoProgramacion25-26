@@ -13,7 +13,11 @@ import java.util.InputMismatchException;
  */
 public class Utilidades {
 
-    //Método que pide un número al usuario
+    
+    /**
+     * Método que pide un número al usuario
+     * @return el número que introduzca el usuario
+     */
     public static int pedirNumero() {
         int num = -1;
         do {
@@ -27,5 +31,9 @@ public class Utilidades {
         return num;
         } while (num != -1);
         
+    }
+    
+    public static String letraAleatoria(){
+        double letra = Math.random()*26;
     }
 }
