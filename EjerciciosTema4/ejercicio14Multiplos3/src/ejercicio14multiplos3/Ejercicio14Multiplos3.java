@@ -14,10 +14,10 @@ public class Ejercicio14Multiplos3 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int num, numFin;
-        num = pedirNum.pedirNum();
-        numFin = pedirNum.mayor0(num);
-        pedirNum.resultado(numFin);
+        int num, numFin;                        //Creo las variables
+        num = pedirNum.pedirNum();              //Llamo al método que pide un número y lo guardo en la variable
+        numFin = pedirNum.mayor0(num);          //Llamo al método que comprueba si el número es mayor que cero y lo guardo en la variable
+        pedirNum.resultado(numFin);             //Llamo al método que da el resultado final
     }
     
 }
