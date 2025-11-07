@@ -1,4 +1,5 @@
 
+import static Utilidades.Utilidades.letraAleatoria;
 import java.util.Scanner;
 
 /*
@@ -42,6 +43,9 @@ public class ClaseString {
         } else {
             System.out.println("Son distintos");
         }
-        
+       
+        String letra;
+        letra = Utilidades.Utilidades.letraAleatoria();
+        System.out.println(letra);
     }
 }

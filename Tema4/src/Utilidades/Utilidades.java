@@ -34,6 +34,8 @@ public class Utilidades {
     }
     
     public static String letraAleatoria(){
-        double letra = Math.random()*26;
+        double codigo = (Math.random()*26) + 97;
+        String letra = "" + (char) codigo;
+        return letra;
     }
 }
