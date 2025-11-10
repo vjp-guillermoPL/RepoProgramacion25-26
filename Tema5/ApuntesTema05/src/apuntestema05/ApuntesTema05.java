@@ -35,6 +35,34 @@ public class ApuntesTema05 {
         System.out.println(tuCoche);
         
         System.out.println(tuCoche.getRuedas());
+        
+        
+        // MODIFICADORES DE ACCESO
+        Bicicleta bicicleta = new Bicicleta();
+        System.out.println(bicicleta.ruedas);
+        System.out.println(bicicleta.getEstaPedaleando());
+        //bicicleta.acelerar();
+        
+        Bicicleta bicicleta2 = new Bicicleta();
+        System.out.println(bicicleta2);
+        System.out.println("¿Cuántas bicis hemos creado?");
+        System.out.println(bicicleta.getNumBicicleta());
+        
+        // PASO DE PARÁMETROS POR VALOR O POR REFERENCIA
+        int num1 = 4;
+        System.out.println(suma(num1));
+        
+        Bicicleta bici = new Bicicleta();
+        empezarAPedalear(bici);
+    }
+    
+    public static int suma(int num1){
+        int num2 = 3;
+        return num1 + num2;
+    }
+    
+    public static void empezarAPedalear(Bicicleta bici) {
+        bici.setEstaPedaleando(true);
     }
     
 }
