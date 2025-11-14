@@ -20,6 +20,9 @@ public class Bicicleta {
     // Atributo estático que pertenece a la clase
     private static int numBicicleta = 0;
     
+    // ATRIBUTO DE OTRA CLASE (Composición de clases)
+    private Ciclista ciclista;
+    
     //CONSTRUCTORES
     //Por defecto
     public Bicicleta(){
@@ -31,9 +34,12 @@ public class Bicicleta {
         
         // Incrementamos el valor del número de bicicletas
         incrementarNumBicicleta();
+        
+        //IMPORTANTE Inicializamos un ciclista por defecto (Con el constructor por defecto)
+        this.ciclista = new Ciclista();
     }
     
-    public Bicicleta(int ruedas, String manillar, String pedales, String frenos, boolean estaPedaleando) {
+    public Bicicleta(int ruedas, String manillar, String pedales, String frenos, boolean estaPedaleando, Ciclista ciclista) {
         this.ruedas = ruedas;
         this.manillar = manillar;
         this.pedales = pedales;
@@ -42,6 +48,9 @@ public class Bicicleta {
         
         // Incrementamos el valor del número de bicicletas
         incrementarNumBicicleta();
+        
+        //Inicializamos un ciclista con los valores pasados por parámetro
+        this.ciclista = ciclista;
     }
     
     // GETTERS Y SETTERS
@@ -98,13 +107,22 @@ public class Bicicleta {
         numBicicleta++;
     }
     
+    //Añadimos el get y set del ciclista
+    public Ciclista getCiclista(){
+        return this.ciclista;
+    }
+    
+    public void setCiclista(Ciclista ciclista){
+        this.ciclista = ciclista;
+    }
+    
     
     //TO STRING
     @Override
     public String toString() {
         return "Mi bicicleta tiene "+ this.ruedas +" ruedas, "+ this.manillar +
                 " manillar, "+ this.pedales +" pedales, "+ this.frenos +
-                " frenos y esta pedaleando"+ this.estaPedaleando;
+                " frenos y esta pedaleando"+ this.estaPedaleando + this.ciclista;
     }
     
 }

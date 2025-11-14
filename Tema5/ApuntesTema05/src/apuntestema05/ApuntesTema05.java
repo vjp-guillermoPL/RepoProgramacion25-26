@@ -54,6 +54,15 @@ public class ApuntesTema05 {
         
         Bicicleta bici = new Bicicleta();
         empezarAPedalear(bici);
+        
+        //COMPOSICION DE CLASES
+        // Creo un ciclista 
+        Ciclista Pogacar = new Ciclista("Pogacar", 1, "Líder");
+        
+        // Creo una bici
+        Bicicleta biciPogacar = new Bicicleta(2, "recto", "De carretera", "de disco", true, Pogacar);
+        
+        System.out.println(biciPogacar);
     }
     
     public static int suma(int num1){
