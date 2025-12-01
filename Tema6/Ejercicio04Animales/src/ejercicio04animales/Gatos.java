@@ -8,19 +8,19 @@ package ejercicio04animales;
  *
  * @author alumno
  */
-public class Perros extends Canidos{       //Creo la subclase de Canidos
+public class Gatos extends Felinos{       //Creo la subclase de Felinos
     
-    public Perros(){                               //Creo el constructor por defecto
+    public Gatos(){                               //Creo el constructor por defecto
         super();
     }
     
-    public Perros(String nombre, int edad, int peso){          //Creo el constructor parametrizado
+    public Gatos(String nombre, int edad, int peso){          //Creo el constructor parametrizado
         super(nombre, edad, peso);
     }
     
     @Override                               //Creo los métodos sacados de la clase abstracta
     public String mostrarSonido(){
-        return "Su sonido es el ladrido";
+        return "Su sonido es el maullido";
     }
     
     @Override
@@ -30,12 +30,12 @@ public class Perros extends Canidos{       //Creo la subclase de Canidos
     
     @Override
     public String mostrarAlimentacion(){
-        return "Su alimentación es carnívora";
+        return "Se alimenta de ratones";
     }
     
     @Override
     public String mostrarNombreCientifico(){
-        return "Su nombre científico es Canis lupus familiaris";
+        return "Su nombre científico es Felis silvestris catus";
     }
     
     @Override                                       //Creo el toString

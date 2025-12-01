@@ -8,17 +8,17 @@ package ejercicio04animales;
  *
  * @author alumno
  */
-public abstract class Felinos extends Animal{
+public abstract class Felinos extends Animal{       //Creo la subclase de Animal
     
-    public Felinos(){
+    public Felinos(){                               //Creo el constructor por defecto
         super();
     }
     
-    public Felinos(String nombre, int edad, int peso){
+    public Felinos(String nombre, int edad, int peso){          //Creo el constructor parametrizado
         super(nombre, edad, peso);
     }
     
-    @Override
+    @Override                                       //Creo el toString
     public String toString(){
         return super.toString();
     }
