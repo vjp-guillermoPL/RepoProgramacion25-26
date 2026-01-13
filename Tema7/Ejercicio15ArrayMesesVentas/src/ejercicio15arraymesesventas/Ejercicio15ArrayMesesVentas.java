@@ -49,6 +49,7 @@ public class Ejercicio15ArrayMesesVentas {
                 default: System.out.println("Introduce un número válido");
             }
             System.out.println("----------------------------------------------------------");
+            System.out.println("Introduce un número entre el 1 y el 7");
         } while (num != 7);
     }
     
