@@ -44,21 +44,29 @@ public class Ejercicio10ReemplazarRepetidos {
         }
     }
 
+    /**
+     * Método que reemplaza todos los números repetidos por 0
+     * @param reemplazo 
+     */
     public static void reemplazarRepetidos(int reemplazo[]) {
-        boolean repetidos = true;
-        int prueba2 = 0;
-        int prueba = reemplazo[prueba2];
-        while (repetidos == true) {
-            for (int i = 0; i < reemplazo.length; i++) {
-                if (prueba == reemplazo[i] && reemplazo[1] != 0) {
-                    reemplazo[i] = 0;
+        int num = 0;
+        while (num < reemplazo.length) {
+            int valorActual = reemplazo[num];
+            if (valorActual != 0) {
+                int j = num + 1;
+                boolean hayCopia = false;
+                while (j < reemplazo.length) {
+                    if (reemplazo[j] == valorActual) {
+                        hayCopia = true;
+                        reemplazo[j] = 0;
+                    }
+                    j++;
                 }
-                if (i == reemplazo.length - 1) {
-                    prueba2++;
-                    prueba = reemplazo[prueba2];
+                if (hayCopia) {
+                    reemplazo[num] = 0;
                 }
             }
-            repetidos = false;
+            num++;
         }
 
     }
