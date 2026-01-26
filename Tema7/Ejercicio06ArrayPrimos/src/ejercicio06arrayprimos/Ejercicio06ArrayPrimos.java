@@ -25,30 +25,41 @@ public class Ejercicio06ArrayPrimos {
             }
             num++;
         }
-        
+
         mostrarArray(primo);
     }
-    
+
     /**
      * Método que comprueba si el número es primo
+     *
      * @param num
-     * @return 
+     * @return
      */
     public static boolean esPrimo(int num) {
-        if (num <= 1) return false;
-        for (int i = 2; i * i <= num; i++) {            
-            if (num % i == 0) return false;
+        boolean esPrimo = true;
+        if (num <= 1) {
+            esPrimo = false;
         }
-        return true;
+
+        int i = 2;
+        while (i * i <= num) {
+            if (num % i == 0) {
+                esPrimo = false;
+            }
+            i++;
+        }
+
+        return esPrimo;
     }
-    
+
     /**
      * Método que muestra todos los valores del array
-     * @param primo 
+     *
+     * @param primo
      */
     public static void mostrarArray(int primo[]) {
         for (int i = 0; i < primo.length; i++) {
-            System.out.println("["+ (i+1) +"] : "+ primo[i]);
+            System.out.println("[" + (i + 1) + "] : " + primo[i]);
         }
     }
 
