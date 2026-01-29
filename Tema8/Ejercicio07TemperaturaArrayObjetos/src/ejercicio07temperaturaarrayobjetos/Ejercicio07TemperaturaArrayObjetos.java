@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package ejercicio07temperaturaarrayobjetos;
+
 import java.util.Scanner;
 
 /**
@@ -34,8 +35,10 @@ public class Ejercicio07TemperaturaArrayObjetos {
                     mostrarTemp(tempDia);
                     break;
                 case 3:
+                    mostrarMedia(tempDia);
                     break;
                 case 4:
+                    temperaturaMasAlta(tempDia);
                     break;
                 case 5:
                     System.out.println("Saliendo del programa...");
@@ -55,31 +58,71 @@ public class Ejercicio07TemperaturaArrayObjetos {
      * @param tempDia
      */
     public static void rellenarTemp(Dia tempDia[]) {
-        String[] nombreDia = {"Lunes","Martes","Miercoles","Jueves","Viernes","Sábado","Domingo"};
+        String[] nombreDia = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo"};
         int diaInicio = (int) (Math.random() * 6);
-        
+
         for (int i = 0; i < tempDia.length; i++) {
             tempDia[i].setTemperatura((int) (Math.random() * 40));
             tempDia[i].setNombreDia(nombreDia[diaInicio]);
             if (diaInicio < nombreDia.length - 1) {
                 diaInicio++;
-            } else{
+            } else {
                 diaInicio = 0;
             }
-            
+
         }
     }
-    
+
     /**
      * Método que muestra la temperatura de cada día
-     * @param tempDia 
+     *
+     * @param tempDia
      */
-    public static void mostrarTemp(Dia tempDia[]){
-        for (int i = 0; i < tempDia.length; i++){
-            System.out.println(tempDia[i].getNombreDia() +" dia "+ (i+1) +": "+ tempDia[i].getTemperatura() +" grados");  
+    public static void mostrarTemp(Dia tempDia[]) {
+        for (int i = 0; i < tempDia.length; i++) {
+            System.out.println(tempDia[i].getNombreDia() + " dia " + (i + 1) + ": " + tempDia[i].getTemperatura() + " grados");
         }
     }
-    
-    
+
+    /**
+     * Método que calcula la temperatura media y la muestra por pantalla
+     *
+     * @param tempDia
+     */
+    public static void mostrarMedia(Dia tempDia[]) {
+        int media = 0;
+        for (int i = 0; i < tempDia.length; i++) {
+            media += tempDia[i].getTemperatura();
+        }
+        media = media / tempDia.length;
+
+        System.out.println("La temperatura media es de " + media + " grados");
+    }
+
+    /**
+     * Método que calcula el día o días más caluroso del mes y lo muestra por pantalla
+     *
+     * @param tempDia
+     */
+    public static void temperaturaMasAlta(Dia tempDia[]) {
+        int mayor = tempDia[0].getTemperatura();
+        int cuenta1 = 1;
+        int cuenta2 = 1;
+
+        for (int i = 0; i < tempDia.length; i++) {
+            if (mayor < tempDia[i].getTemperatura()) {
+                mayor = tempDia[i].getTemperatura();
+                cuenta1 = i;
+            }
+            if (mayor == tempDia[i].getTemperatura()) {
+                cuenta2 = i;
+            }
+        }
+        System.out.println("El día o días más calurosos son:");
+        System.out.println("");System.out.println(tempDia[cuenta1].getNombreDia() + " dia " + (cuenta1 + 1) + ": " + tempDia[cuenta1].getTemperatura() + " grados");
+        if (cuenta2 > 1) {
+            System.out.println("");System.out.println(tempDia[cuenta2].getNombreDia() + " dia " + (cuenta2 + 1) + ": " + tempDia[cuenta2].getTemperatura() + " grados");
+        }
+    }
 
 }
