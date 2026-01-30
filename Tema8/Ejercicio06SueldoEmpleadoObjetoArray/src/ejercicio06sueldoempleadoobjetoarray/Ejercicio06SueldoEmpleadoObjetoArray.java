@@ -78,13 +78,20 @@ public class Ejercicio06SueldoEmpleadoObjetoArray {
         }
     }
     
+    /**
+     * Método que calcula el sueldo
+     * @param empleado
+     * @param i
+     * @return el sueldo
+     */
     public static double calcularSueldo(Empleado empleado[], int i) {
         double num;
         
         if (empleado[i].getHorasTrabajadas() < 40) {
             num = empleado[i].getHorasTrabajadas() * empleado[i].getTarifaPorHora();
         } else {
-            num = (40 * empleado[i].getTarifaPorHora())+(empleado[i].getHorasTrabajadas()-40)*(1.5*empleado[i].getTarifaPorHora());
+            num = (40 * empleado[i].getTarifaPorHora())+
+                    (empleado[i].getHorasTrabajadas()-40)*(1.5*empleado[i].getTarifaPorHora());
         }
         
         return num;
