@@ -59,7 +59,7 @@ public class Ejercicio07TemperaturaArrayObjetos {
      */
     public static void rellenarTemp(Dia tempDia[]) {
         String[] nombreDia = {"Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sábado", "Domingo"};
-        int diaInicio = (int) (Math.random() * 6);
+        int diaInicio = (int) (Math.random() * 7);
 
         for (int i = 0; i < tempDia.length; i++) {
             tempDia[i].setTemperatura((int) (Math.random() * 40));
