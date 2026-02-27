@@ -21,14 +21,14 @@ public class Ejercicio04CambiarDuplicados {
 
         rellenarLista(duplicados);
         mostrarLista(duplicados);
-        
+        quitarDuplicados(duplicados);
         mostrarLista(duplicados);
     }
 
     /**
      * Método que pide al usuario rellenar la lista con números positivos
-     * 
-     * @param duplicados 
+     *
+     * @param duplicados
      */
     public static void rellenarLista(ArrayList<Integer> duplicados) {
         Scanner entrada = new Scanner(System.in);
@@ -43,30 +43,36 @@ public class Ejercicio04CambiarDuplicados {
             num = entrada.nextInt();
         }
     }
-    
+
     /**
      * Método que muestra la lista completa
-     * 
-     * @param duplicados 
+     *
+     * @param duplicados
      */
-    public static void mostrarLista(ArrayList<Integer> duplicados){
+    public static void mostrarLista(ArrayList<Integer> duplicados) {
+        System.out.println("Lista:");
+
         for (int i = 0; i < duplicados.size(); i++) {
-            System.out.println("Lista:");
-            System.out.print(duplicados.get(i) +" ");
+            System.out.print(duplicados.get(i) + " ");
         }
     }
-    
+
     /**
      * Método que sustituye los números duplicados por 0
-     * 
-     * @param duplicados 
+     *
+     * @param duplicados
      */
-    public static void quitarDuplicados(ArrayList<Integer> duplicados){
-        for (int i = 0; i < duplicados.size(); i++){
-            if (true) {
-                duplicados.set(i, 0);
+    public static void quitarDuplicados(ArrayList<Integer> duplicados) {
+        for (int i = 0; i < duplicados.size(); i++) {
+            for (int j = i + 1; j < duplicados.size(); j++) {
+                if (duplicados.get(i).equals(duplicados.get(j))) {
+                    duplicados.set(i, 0);
+                    duplicados.set(j, 0);
+                }
             }
         }
+        System.out.println("");
+        System.out.println("Duplicados eliminados");
     }
 
 }
