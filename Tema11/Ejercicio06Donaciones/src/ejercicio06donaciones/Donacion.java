@@ -9,20 +9,20 @@ package ejercicio06donaciones;
  * @author alumno
  */
 public class Donacion {
-    private String donador;
-    private int donacion;
+    private String donador;                             //Atributos
+    private double donacion;
     
-    public Donacion(){
+    public Donacion(){                                  //Constructores
         this.donador = "";
         this.donacion = 0;
     }
 
-    public Donacion(String donador, int donacion) {
+    public Donacion(String donador, double donacion) {
         this.donador = donador;
         this.donacion = donacion;
     }
 
-    public String getDonador() {
+    public String getDonador() {                        //Getters y setters
         return donador;
     }
 
@@ -30,15 +30,15 @@ public class Donacion {
         this.donador = donador;
     }
 
-    public int getDonacion() {
+    public double getDonacion() {
         return donacion;
     }
 
-    public void setDonacion(int donacion) {
+    public void setDonacion(double donacion) {
         this.donacion = donacion;
     }
 
-    @Override
+    @Override                                           //ToString
     public String toString() {
         return "El donador "+ this.donador +" donó "+ this.donacion;
     }
