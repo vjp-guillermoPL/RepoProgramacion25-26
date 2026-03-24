@@ -2,13 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package ejercicio06donaciones;
+package ejercicio07campannas;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -102,6 +103,19 @@ public class Campanna {
             }
         });
         return lista;
+    }
+    
+    @Override                                   //Sobreescribo los métodos equals y hashCode para buscar las campañas por nombre
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Campanna campanna = (Campanna) o;
+        return Objects.equals(nombreCampanna, campanna.nombreCampanna);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nombreCampanna);
     }
 
     @Override                                                   //ToString

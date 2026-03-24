@@ -17,7 +17,9 @@ public class Ejercicio06Donaciones {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        menu();
+        Campanna campana = new Campanna();
+        
+        menu(campana);
     }
     
     /**
@@ -48,7 +50,8 @@ public class Ejercicio06Donaciones {
     }
     
     /**
-     * Método que pide un número double (para cantidades)
+     * Método que pide un número double
+     * 
      * @return el número double
      */
     public static double pedirDouble() {
@@ -70,30 +73,74 @@ public class Ejercicio06Donaciones {
         return cadena;
     }
     
-    // --- MÉTODOS DE LÓGICA (ACCIONES DEL MENÚ) ---
+    /**
+     * Método que ejecuta el menú
+     * 
+     * @param campana 
+     */
+    public static void menu(Campanna campana) {
+        int opcion;
+
+        do {
+            mostrarMenu();
+            System.out.println("Elija una opción");
+            opcion = pedirNum();
+
+            switch (opcion) {
+                case 1:
+                    anadirDonacion(campana);
+                    break;
+                case 2:
+                    mostrarDonaciones(campana);
+                    break;
+                case 3:
+                    buscarDonaciones(campana);
+                    break;
+                case 4:
+                    mostrarNumeroDonaciones(campana);
+                    break;
+                case 5:
+                    mostrarTotalRecaudado(campana);
+                    break;
+                case 6:
+                    mostrarOrdenadas(campana);
+                    break;
+                case 7:
+                    System.out.println("Saliendo...");
+                    break;
+                default:
+                    System.out.println("Número introducido inválido");
+            }
+
+        } while (opcion != 7);
+    }
 
     /**
      * Método para añadir una nueva donación a la campaña
+     * 
+     * @param campana 
      */
-    public static void anadirDonacion(Campanna c) {
+    public static void anadirDonacion(Campanna campana) {
         System.out.print("Introduce nombre del donante: ");
         String nombre = pedirCadena();
         System.out.print("Introduce cantidad a donar: ");
         double cantidad = pedirDouble();
         
         Donacion nueva = new Donacion(nombre, cantidad);
-        c.agregarDonacion(nueva);
+        campana.agregarDonacion(nueva);
     }
 
     /**
-     * Método para mostrar todas las donaciones (orden de inserción)
+     * Método para mostrar todas las donaciones
+     * 
+     * @param campana 
      */
-    public static void mostrarDonaciones(Campanna c) {
-        System.out.println("Listado de donaciones (orden de inserción):");
-        if(c.getDonaciones().isEmpty()){
+    public static void mostrarDonaciones(Campanna campana) {
+        System.out.println("Listado de donaciones:");
+        if(campana.getDonaciones().isEmpty()){
             System.out.println("No hay donaciones registradas.");
         } else {
-            for(Donacion d : c.getDonaciones()){
+            for(Donacion d : campana.getDonaciones()){
                 System.out.println(d);
             }
         }
@@ -101,11 +148,13 @@ public class Ejercicio06Donaciones {
 
     /**
      * Método para buscar donaciones por nombre de donante
+     * 
+     * @param campana 
      */
-    public static void buscarDonaciones(Campanna c) {
+    public static void buscarDonaciones(Campanna campana) {
         System.out.print("Introduce el nombre del donante a buscar: ");
         String buscar = pedirCadena();
-        List<Donacion> encontradas = c.buscarPorDonante(buscar);
+        List<Donacion> encontradas = campana.buscarPorDonante(buscar);
         
         if(encontradas.isEmpty()){
             System.out.println("No se encontraron donaciones de ese donante.");
@@ -119,68 +168,32 @@ public class Ejercicio06Donaciones {
 
     /**
      * Método para mostrar el total de donaciones
+     * 
+     * @param campana 
      */
-    public static void mostrarNumeroDonaciones(Campanna c) {
-        System.out.println("Número de donaciones: " + c.getDonaciones().size());
+    public static void mostrarNumeroDonaciones(Campanna campana) {
+        System.out.println("Número de donaciones: " + campana.getDonaciones().size());
     }
 
     /**
      * Método para mostrar el dinero total recaudado
+     * 
+     * @param campana 
      */
-    public static void mostrarTotalRecaudado(Campanna c) {
-        System.out.println("Dinero total recaudado: " + c.getTotalRecaudado());
+    public static void mostrarTotalRecaudado(Campanna campana) {
+        System.out.println("Dinero total recaudado: " + campana.totalRecaudado());
     }
 
     /**
      * Método para mostrar donaciones ordenadas de mayor a menor
+     * 
+     * @param campana 
      */
-    public static void mostrarOrdenadas(Campanna c) {
+    public static void mostrarOrdenadas(Campanna campana) {
         System.out.println("Donaciones ordenadas de mayor a menor:");
-        List<Donacion> ordenadas = c.getOrdenadasMayorAMenor();
+        List<Donacion> ordenadas = campana.ordenadasMayorAMenor();
         for(Donacion d : ordenadas){
             System.out.println(d);
         }
-    }
-
-    /**
-     * Método que ejecuta el menú
-     */
-    public static void menu() {
-        // Inicializamos la campaña
-        Campanna campaña = new Campanna("Campaña Solidaria COVID");
-        int opcion;
-
-        do {
-            mostrarMenu();
-            System.out.println("Elija una opción");
-            opcion = pedirNum();
-
-            switch (opcion) {
-                case 1:
-                    anadirDonacion(campaña);
-                    break;
-                case 2:
-                    mostrarDonaciones(campaña);
-                    break;
-                case 3:
-                    buscarDonaciones(campaña);
-                    break;
-                case 4:
-                    mostrarNumeroDonaciones(campaña);
-                    break;
-                case 5:
-                    mostrarTotalRecaudado(campaña);
-                    break;
-                case 6:
-                    mostrarOrdenadas(campaña);
-                    break;
-                case 7:
-                    System.out.println("Saliendo...");
-                    break;
-                default:
-                    System.out.println("Número introducido inválido");
-            }
-
-        } while (opcion != 7);
     }
 }
