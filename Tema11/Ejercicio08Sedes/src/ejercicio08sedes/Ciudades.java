@@ -4,7 +4,7 @@
  */
 package ejercicio08sedes;
 
-import java.util.LinkedHashSet;
+import java.util.TreeSet;
 import java.util.Set;
 
 /**
@@ -17,12 +17,12 @@ public class Ciudades {
     
     public Ciudades(){
         this.nombre = "";
-        this.sedes = new LinkedHashSet<>();
+        this.sedes = new TreeSet<>();
     }
 
-    public Ciudades(String nombre, Set<Sedes> sedes) {
+    public Ciudades(String nombre) {
         this.nombre = nombre;
-        this.sedes = new LinkedHashSet<>();
+        this.sedes = new TreeSet<>();
     }
 
     public String getNombre() {

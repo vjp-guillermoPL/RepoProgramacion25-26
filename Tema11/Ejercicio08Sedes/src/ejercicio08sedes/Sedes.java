@@ -8,16 +8,16 @@ package ejercicio08sedes;
  *
  * @author alumno
  */
-public class Sedes {
+public class Sedes implements Comparable<Sedes>{
     private String nombre;                                      //Atributos
-    private int ingresosAnuales;
+    private double ingresosAnuales;
     
     public Sedes(){                                             //Constructores
         this.nombre = "";
         this.ingresosAnuales = 0;
     }
 
-    public Sedes(String nombre, int ingresosAnuales) {
+    public Sedes(String nombre, double ingresosAnuales) {
         this.nombre = nombre;
         this.ingresosAnuales = ingresosAnuales;
     }
@@ -30,12 +30,21 @@ public class Sedes {
         this.nombre = nombre;
     }
 
-    public int getIngresosAnuales() {
+    public double getIngresosAnuales() {
         return ingresosAnuales;
     }
 
-    public void setIngresosAnuales(int ingresosAnuales) {
+    public void setIngresosAnuales(double ingresosAnuales) {
         this.ingresosAnuales = ingresosAnuales;
+    }
+    
+    @Override                                                  //compareTo
+    public int compareTo(Sedes otra){
+        if (this.ingresosAnuales < otra.ingresosAnuales) 
+            return 1;    
+        if (this.ingresosAnuales > otra.ingresosAnuales) 
+            return -1;
+        return this.nombre.compareTo(otra.nombre); // Si empetan en €, decide el nombre
     }
 
     @Override                                                   //ToString
