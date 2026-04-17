@@ -24,22 +24,22 @@ public class Ejercicio06FicheroPares {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner entrada = new Scanner(System.in); //creo objeto scanner
+        Scanner entrada = new Scanner(System.in);
 
-        int seleccion = -1; //declaro e inicializo variables para que no tenga problemas con el control de excepciones
+        int seleccion = -1;
 
-        do { //bucle que al menos se repite una vez
-            try { //control de excepciones
+        do {
+            try {
 
-                mostrarMenu(); //llamo al metodo y imprimo por pantalla sus opciones
-                seleccion = entrada.nextInt(); //guardo en la variable la opcion
+                mostrarMenu();
+                seleccion = entrada.nextInt();
 
-                entrada.nextLine(); //limpio buffer
+                entrada.nextLine();
 
-                switch (seleccion) { //condicional para elegir una opcion
-                    case 1: //caso 1 
-                        volcarLosParesEnElFichero(); //llamo al metodo
-                        break; //para no saltar al siguiente caso
+                switch (seleccion) {
+                    case 1:
+                        volcarLosParesEnElFichero();
+                        break;
                     case 2:
                         mostrarElFichero();
                         break;
@@ -50,21 +50,21 @@ public class Ejercicio06FicheroPares {
                         System.out.println("Opción introducida fuera de rango");
                 }
 
-            } catch (InputMismatchException e) { //capturo las excepciones y las muestro por pantalla
+            } catch (InputMismatchException e) {
                 System.out.println("Dato erróneo, se esperaba un número entero");
-                entrada.nextLine(); //limpio el buffer del scanner
+                entrada.nextLine();
             } catch (Exception e) {
                 System.out.println("Fallo inesperado del sistema");
-                entrada.nextLine(); //limpio el buffer del scanner
+                entrada.nextLine();
             }
-        } while (seleccion != 3); //se repite el bucle mientras la opcion sea distinta de 3
+        } while (seleccion != 3);
 
     }
 
     /**
      * Método que muestra las opciones del menú
      */
-    public static void mostrarMenu() { //metodo para mostrar el menu
+    public static void mostrarMenu() {
 
         System.out.println("--- GESTOR DE NÚMEROS PARES ---");
         System.out.println("1.Guardar los 100 primeros números pares en un archivo");
@@ -78,32 +78,29 @@ public class Ejercicio06FicheroPares {
      * @throws FileNotFoundException
      * @throws IOException
      */
-    public static void volcarLosParesEnElFichero() throws FileNotFoundException, IOException { //metodo para mostrar los pares en el fichero en el que lanzo las excepciones
-        Scanner entrada = new Scanner(System.in); //creo objeto scanner
-        int[] listaPares = new int[100]; //creo un array con 100 posiciones
-        int valorPar = 2; // declaro e incializo la variable para que empiece en par
+    public static void volcarLosParesEnElFichero() throws FileNotFoundException, IOException {
+        Scanner entrada = new Scanner(System.in);
+        int[] listaPares = new int[100];
+        int valorPar = 2;
 
-        // Rellenamos el array con los 100 primeros pares
-        for (int i = 0; i < listaPares.length; i++) { //con el bucle for recorro el array 
-            listaPares[i] = valorPar; // Guardamos en la variable para rellenar el array el número con la posición que tiene
-            valorPar = valorPar + 2; // voy sumando 2 para añadir los numeros pares         
+        for (int i = 0; i < listaPares.length; i++) {
+            listaPares[i] = valorPar;
+            valorPar = valorPar + 2;
         }
 
         System.out.println("Escribe el nombre del archivo a crear: ");
-        String archivoDestino = entrada.nextLine(); //guardo en la variable el nombre de la agenda
+        String archivoDestino = entrada.nextLine();
 
         try (FileWriter flujoEscritura = new FileWriter(archivoDestino); PrintWriter impresora = new PrintWriter(flujoEscritura)) {
-            //// Creo el acceso al fichero para que se abra y se cierre de manera idependiente y para poder escribir le paso el objeto creado por parametros a la impresora
 
-            // Recorremos el array de números
-            for (int parActual : listaPares) { // recorro en el Array solo los numeros pares
-                impresora.println(parActual); // Escribo los numeros pares en lineas distintas
+            for (int parActual : listaPares) {
+                impresora.println(parActual);
             }
 
-            System.out.println("Array exportado correctamente"); //imprimo por pantalla que se ha volcado el array
+            System.out.println("Array exportado correctamente");
 
         } catch (IOException e) {
-            System.out.println("Fallo durante la escritura del disco: " + e.getMessage()); //muestro el mensaje de la captura de la exccepcion
+            System.out.println("Fallo durante la escritura del disco: " + e.getMessage());
         }
     }
 
@@ -113,31 +110,30 @@ public class Ejercicio06FicheroPares {
      * @throws FileNotFoundException
      * @throws IOException
      */
-    public static void mostrarElFichero() throws FileNotFoundException, IOException { //metodo para mostrar el contenido del fichero lazando las excepciones
-        Scanner entrada = new Scanner(System.in); //creo objeto scanner
+    public static void mostrarElFichero() throws FileNotFoundException, IOException {
+        Scanner entrada = new Scanner(System.in);
 
-        System.out.println("Indica el nombre del archivo a abrir: "); //imprimo por pantalla la agenda que quiere leer
-        String archivoDestino = entrada.nextLine(); //guardo en la variable el nombre que le pido al usuario
+        System.out.println("Indica el nombre del archivo a abrir: ");
+        String archivoDestino = entrada.nextLine();
 
-        // Apuntamos al fichero
-        File documento = new File(archivoDestino); //apuntando a la agenda guardo el nombre en un objeto
+        File documento = new File(archivoDestino);
 
-        if (!documento.exists()) { //condicional para ver si el archivo existe del fichero que le llamo agenda
+        if (!documento.exists()) {
             System.out.println("El archivo solicitado no se encuentra en la ruta");
             return;
         }
 
-        try (FileReader flujoLectura = new FileReader(documento); BufferedReader lectorLineas = new BufferedReader(flujoLectura)) { //uso el try-catch con recursos para abrir y cerrar de forma independiente FileReader y BufferedReader
+        try (FileReader flujoLectura = new FileReader(documento); BufferedReader lectorLineas = new BufferedReader(flujoLectura)) {
 
-            String filaActual; // Declaro variable para guardar las lineas que se van leyendo
+            String filaActual;
             System.out.println("=== DATOS DEL ARCHIVO ===");
 
-            while ((filaActual = lectorLineas.readLine()) != null) { //bucle que se repite mientras la linea no este vacia
-                System.out.println(filaActual); //imprimo las lineas
+            while ((filaActual = lectorLineas.readLine()) != null) {
+                System.out.println(filaActual);
             }
 
-        } catch (IOException e) { //capturo la excepcion
-            System.out.println("Problema al abrir el archivo para lectura: " + e.getMessage()); //imprimo por pantalla la excepcion erronea con el mensaje correspondiente
+        } catch (IOException e) {
+            System.out.println("Problema al abrir el archivo para lectura: " + e.getMessage());
         }
     }
 }
